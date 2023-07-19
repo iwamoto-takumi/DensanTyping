@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="site.iwataku.Config">
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="利用者" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="モード" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="記録" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="最大記録数" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="デバッグモード" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <SplitMenuButton fx:id="splitMenuButton_User" mnemonicParsing="false" text="　　　　　　　" GridPane.columnIndex="1">
+              <items>
+                <MenuItem fx:id="menuItem_Visitor" mnemonicParsing="false" onAction="#mouse_onClick_SplitMenuButton_Mode_MenuItem_Visitor" text="来訪者" />
+                <MenuItem fx:id="menuItem_CollegeStudent" mnemonicParsing="false" onAction="#mouse_onClick_SplitMenuButton_Mode_MenuItem_CollegeStudent" text="高専生" />
+                  <MenuItem fx:id="menuItem_Teacher" mnemonicParsing="false" onAction="#mouse_onClick_SplitMenuButton_Mode_MenuItem_Teacher" text="先生" />
+              </items>
+            </SplitMenuButton>
+            <SplitMenuButton fx:id="splitMenuButton_Mode" mnemonicParsing="false" text="　　　　　　　" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <items>
+                <MenuItem fx:id="menuItem_Japanese" mnemonicParsing="false" onAction="#mouse_onClick_SplitMenuButton_User_MenuItem_Japanese" text="日本語" />
+                <MenuItem fx:id="menuItem_Hiragana" mnemonicParsing="false" onAction="#mouse_onClick_SplitMenuButton_User_MenuItem_Hiragana" text="にほんご" />
+               </items>
+            </SplitMenuButton>
+            <TextField fx:id="textField_MaxRecordValue" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <SplitMenuButton fx:id="splitMenuButton_EnableDebugMode" mnemonicParsing="false" prefWidth="124.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+              <items>
+                <MenuItem fx:id="splitMenuButton_EnableDebugMode_MenuItem_Enable" mnemonicParsing="false" onAction="#mouse_onClick_SplitMenuButton_EnableDebugMode_MenuItem_Enable" text="Enable" />
+                <MenuItem fx:id="splitMenuButton_EnableDebugMode_MenuItem_Disable" mnemonicParsing="false" onAction="#mouse_onClick_SplitMenuButton_EnableDebugMode_MenuItem_Disable" text="Disable" />
+              </items>
+            </SplitMenuButton>
+            <SplitMenuButton fx:id="splitMenuButton_EnableRecord" mnemonicParsing="false" prefHeight="25.0" prefWidth="124.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <items>
+                <MenuItem fx:id="splitMenuButton_EnableRecord_MenuItem_Enable" mnemonicParsing="false" onAction="#mouse_onClick_splitMenuButton_EnableRecord_MenuItem_Enable" text="Enable" />
+                <MenuItem fx:id="splitMenuButton_EnableRecord_MenuItem_Disable" mnemonicParsing="false" onAction="#mouse_onClick_splitMenuButton_EnableRecord_MenuItem_Disable" text="Disable" />
+              </items>
+            </SplitMenuButton>
+            <Button fx:id="button_RecordClear" mnemonicParsing="false" onAction="#mouse_onClick_button_RecordClear" text="記録をクリア" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="button_Close" mnemonicParsing="false" onAction="#mouse_onClick_Close" text="閉じる" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#mouse_onClick_Button_Save_and_Close" text="適用して閉じる" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+         </children>
+      </GridPane>
+   </bottom>
+</BorderPane>

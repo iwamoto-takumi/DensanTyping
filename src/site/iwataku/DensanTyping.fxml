@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="site.iwataku.DensanTyping">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="メニュー">
+            <items>
+                  <Menu mnemonicParsing="false" text="新規">
+                    <items>
+                      <MenuItem fx:id="menuItem_Lesson1" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Lesson1" text="Lesson1 基本">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="DIGIT1" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="menuItem_Lesson2" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Lesson2" text="Lesson2 人差し指">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="DIGIT2" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="menuItem_Lesson3" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Lesson3" text="Lesson3 中指">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="DIGIT3" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="menuItem_Lesson4" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Lesson4" text="Lesson4 薬指">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="DIGIT4" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="menuItem_Lesson5" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Lesson5" text="Lesson5 小指">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="DIGIT5" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="menuItem_Begineer" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Begineer" text="Begineer">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="DIGIT6" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="menuItem_Intermediate" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Intermediate" text="Intermediate">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="DIGIT7" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="menuItem_Advanced" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Advanced" text="Advanced">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="DIGIT8" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="menuItem_Master" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Master" text="Master">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="DIGIT9" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="menuItem_Expart" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Expart" text="Expart">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="DIGIT0" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                    </items>
+                  </Menu>
+              <MenuItem fx:id="menuItem_FinishGame" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_FinishGame" text="終わる">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="F" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="menuItem_Close" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_Close" text="閉じる">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="C" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="設定">
+               <items>
+                  <Menu mnemonicParsing="false" text="利用者">
+                     <items>
+                        <RadioMenuItem fx:id="radioMenuItem_Visitor" mnemonicParsing="false" onAction="#mouse_onClick_RadioMenuItem_Visitor" selected="true" text="来訪者">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="user" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="radioMenuItem_CollegeStudent" mnemonicParsing="false" onAction="#mouse_onClick_RadioMenuItem_CollegeStudent" text="高専生" toggleGroup="$user" />
+                        <RadioMenuItem fx:id="radioMenuItem_Teacher" mnemonicParsing="false" onAction="#mouse_onClick_RadioMenuItem_Teacher" text="先生" toggleGroup="$user" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="モード">
+                     <items>
+                        <RadioMenuItem fx:id="radioMenuItem_Japanese" mnemonicParsing="false" onAction="#mouse_onClick_radioMenuItem_Japanese" selected="true" text="日本語">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="mode" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="radioMenuItem_Hiragana" mnemonicParsing="false" onAction="#mouse_onClick_radioMenuItem_Hiragana" text="にほんご" toggleGroup="$mode" />
+                     </items>
+                  </Menu>
+                  <MenuItem fx:id="menuItem_AdvancedSetting" mnemonicParsing="false" onAction="#mouse_onClick_MenuItem_AdvancedSetting" text="詳細設定">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="C" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="50.0" minHeight="30.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="150.0" minHeight="130.0" prefHeight="130.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="150.0" minHeight="130.0" prefHeight="130.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="64.0" text="問題" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="64.0" text="回答" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_Question" disable="true" editable="false" prefHeight="80.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="textField_Answer" disable="true" editable="false" prefHeight="80.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+         </children>
+      </GridPane>
+   </center>
+   <right>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="60.0" minHeight="30.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="30.0" prefHeight="75.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="100.0" text="ミスタイプ数" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="textField_Score" alignment="CENTER" disable="true" editable="false" text="0 点" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="正確率" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_CorrectAnswerRate" alignment="CENTER" disable="true" editable="false" text="0 %" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="秒間タイプ数" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_ValueofTypesForSeconds" alignment="CENTER" disable="true" editable="false" text="0 回" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="スコア" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_ValueofMistypes" alignment="CENTER" disable="true" editable="false" text="0 回" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="BOTTOM" prefHeight="17.0" prefWidth="100.0" text="時間" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_Time" alignment="CENTER" disable="true" editable="false" text="0 秒" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+   </right>
+   <left>
+      <Pane prefHeight="10.0" prefWidth="10.0" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="1位" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_1th" alignment="CENTER" disable="true" text="0 点" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="2位" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_2th" alignment="CENTER" disable="true" text="0 点" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label text="3位" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_3th" alignment="CENTER" disable="true" editable="false" text="0 点" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="191.0" text="&lt;上位の" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="点数&gt;" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </bottom>
+</BorderPane>
